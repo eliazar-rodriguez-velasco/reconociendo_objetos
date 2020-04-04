@@ -1,0 +1,5 @@
+0 GTR
+1 sentra
+2 guitarras
+3 nike
+4 audifonos
