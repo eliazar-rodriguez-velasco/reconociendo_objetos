@@ -36,24 +36,19 @@ jobs:
           else
             echo "Nope!"; exit 1
           fi
-  tarea3:
+  tarea:
     docker:
       - image: cimg/ruby:3.0.2
         auth:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
-    steps:
-    - checkout
-    - run: echo "Proyecto en circle CI"
-    - attach_workspace:
-    # Must be absolute path or relative path from working_directory
-    at: my_workspace
+   
 workflows:
   version: 2
   one_and_two_tree:
     jobs:
       - one
       - two
-      - tarea3:
+      - tarea:
           requires:
             - one
